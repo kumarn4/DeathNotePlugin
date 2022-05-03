@@ -1,0 +1,4 @@
+name: DeathNotePlugin
+version: '${version}'
+main: com.github.mckumama3.deathnoteplugin.deathnoteplugin.DeathNotePlugin
+api-version: 1.17
