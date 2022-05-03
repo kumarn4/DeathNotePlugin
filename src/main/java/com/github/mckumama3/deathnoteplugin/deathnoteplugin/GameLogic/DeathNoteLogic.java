@@ -8,12 +8,13 @@ import java.util.Random;
 public class DeathNoteLogic
 {
     Collection<? extends Player> Players;
+    Player KillerPlayer;
     public DeathNoteLogic(Collection<? extends Player> players){
         Players = players;
     }
 
-    public Player ChooseKiller(){
+    public void ChooseKiller(){
         int i = new Random().nextInt(Players.size());
-        return Players.stream().toList().get(i);
+        KillerPlayer = Players.stream().toList().get(i);
     }
 }
