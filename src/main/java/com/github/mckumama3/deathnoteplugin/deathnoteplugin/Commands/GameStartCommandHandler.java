@@ -13,16 +13,16 @@ public class GameStartCommandHandler implements CommandExecutor
 
     @Override
     public boolean onCommand(
-            CommandSender sender,
-            Command command,
-            String label,
+            @NotNull CommandSender sender,
+            @NotNull Command command,
+            @NotNull String label,
             String[] args)
     {
-        if (sender instanceof Player){
-            Player player = (Player) sender;
+        if (sender instanceof Player player)
+        {
             if(l == null)
             {
-                l = new DeathNoteLogic(sender.getServer().getOnlinePlayers());
+                l = new DeathNoteLogic(player.getServer().getOnlinePlayers());
             }
         }
 
