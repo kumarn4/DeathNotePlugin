@@ -1,5 +1,7 @@
 package com.github.mckumama3.deathnoteplugin.deathnoteplugin.GameLogic;
 
+import net.kyori.adventure.text.ComponentBuilder;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
@@ -16,5 +18,6 @@ public class DeathNoteLogic
     public void ChooseKiller(){
         int i = new Random().nextInt(Players.size());
         KillerPlayer = Players.stream().toList().get(i);
+        KillerPlayer.sendTitle(ChatColor.RED + "あなたはキラです。。。", "");
     }
 }

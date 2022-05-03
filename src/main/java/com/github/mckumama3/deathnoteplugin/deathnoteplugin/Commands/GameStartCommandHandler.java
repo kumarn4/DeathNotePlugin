@@ -23,6 +23,7 @@ public class GameStartCommandHandler implements CommandExecutor
             if(l == null)
             {
                 l = new DeathNoteLogic(player.getServer().getOnlinePlayers());
+                l.ChooseKiller();
             }
         }
 
