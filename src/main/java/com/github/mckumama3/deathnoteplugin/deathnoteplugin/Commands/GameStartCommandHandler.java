@@ -18,7 +18,7 @@ public class GameStartCommandHandler implements CommandExecutor
     {
         if (sender instanceof Player){
             Player player = (Player) sender;
-
+             sender.getServer().getOnlinePlayers();
         }
 
         return false;
