@@ -1,18 +1,13 @@
 package com.github.mckumama3.deathnoteplugin.deathnoteplugin.Commands;
 
-import com.github.mckumama3.deathnoteplugin.deathnoteplugin.DeathNotePlugin;
 import com.github.mckumama3.deathnoteplugin.deathnoteplugin.GameLogic.DeathNoteLogic;
-import com.github.mckumama3.deathnoteplugin.deathnoteplugin.TimeCount.Runner;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class GameStartCommandHandler implements CommandExecutor
+public class GameEndCommandHandler implements CommandExecutor
 {
-    public static DeathNoteLogic l = null;
-
     @Override
     public boolean onCommand(
             @NotNull CommandSender sender,
@@ -20,13 +15,10 @@ public class GameStartCommandHandler implements CommandExecutor
             @NotNull String label,
             String[] args)
     {
-        if (sender instanceof Player player)
+        if(GameStartCommandHandler.l != null)
         {
-            if(l == null)
-            {
-                l = new DeathNoteLogic(player.getServer().getOnlinePlayers(), Integer.parseInt(args[0]));
-                l.ChooseKiller();
-            }
+            DeathNoteLogic.EndGame();
+            GameStartCommandHandler.l = null;
         }
         return true;
     }
